@@ -4,10 +4,13 @@
   "author": "Teppei Sato <teppeis@gmail.com>",
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "google-closure-compiler --flagfile closure.conf"
+    "build": "run-p build:*",
+    "build:simple": "google-closure-compiler --flagfile closure.conf",
+    "build:inject": "google-closure-compiler --flagfile closure-force-inject.conf"
   },
   "dependencies": {
-    "google-closure-compiler": "^20180402.0.0"
+    "google-closure-compiler": "^20180402.0.0",
+    "npm-run-all": "^4.1.2"
   },
   "devDependencies": {},
   "repository": {
